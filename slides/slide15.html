@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感谢参与 - AI³ 深圳站迷你黑客松</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="slide bg-white text-black">
+        <div class="slide-content">
+            <h1 class="slide-title">
+                <span class="bg-blue-600 text-white px-4 py-1 inline-block rotate-2 border-4 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,0.5)]">感谢参与</span>
+            </h1>
+            
+            <!-- 中间内容 -->
+            <div class="bg-white p-8 mb-12 text-center border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform rotate-1 mt-12">
+                <div class="text-4xl font-bold mb-8 text-black">感谢您的关注</div>
+                <p class="text-xl mb-10 text-black">本演示将在 <span id="countdown" class="text-6xl font-black">5</span> 秒后返回首页</p>
+                <div class="flex justify-center">
+                    <button onclick="goToSlide(1)" class="bg-black text-white px-8 py-4 text-xl font-bold border-4 border-black hover:bg-blue-600 hover:translate-x-[-3px] hover:translate-y-[-3px] transition-transform">立即返回首页</button>
+                </div>
+            </div>
+            
+            <!-- 底部信息 -->
+            <div class="bg-yellow-100 text-black p-6 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-center transform -rotate-1">
+                <p class="text-2xl font-bold"><i class="fas fa-star text-yellow-400 mr-2"></i> 期待与您相见在深圳站迷你黑客松活动现场!</p>
+                <div class="flex justify-center mt-4 space-x-6">
+                    <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-weixin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 倒计时功能
+        let count = 5;
+        const countdownDisplay = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            count--;
+            countdownDisplay.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(timer);
+                goToSlide(1);
+            }
+        }, 1000);
+        
+        // 跳转到指定幻灯片
+        function goToSlide(slideNumber) {
+            window.parent.location.hash = `#slide${slideNumber}`;
+        }
+    </script>
+</body>
+</html> 
