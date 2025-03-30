@@ -1,6 +1,6 @@
 // Variables
 let currentSlide = 1;
-const totalSlides = 19;
+const totalSlides = 20;
 const slideFrame = document.getElementById('slideFrame');
 const slideIndicator = document.getElementById('slideIndicator');
 const sidebar = document.getElementById('sidebar');
@@ -11,10 +11,15 @@ const closeSidebarBtn = document.getElementById('closeSidebar');
 const fullscreenBtn = document.getElementById('fullscreenBtn');
 const menuItems = document.querySelectorAll('.sidebar-menu li');
 
+
+// '4' 内容没必要，隐藏掉
 // All slide identifiers in order
 const slideIds = [
-    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 
-    '11', '12', '13', '14', '14a', '14b', '14c', '14d', '15'
+    '1', '2', 
+    '12-organizers', '12-sponsors', '12-0g',
+    '3',  '5', '6', '7',  '9', '10', 
+    '11', '8', 'team-formation',
+    '14', '14d', '14c', '14b', '14a', '13', '15',
 ];
 
 // Functions
